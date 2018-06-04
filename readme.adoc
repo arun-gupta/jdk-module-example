@@ -44,4 +44,5 @@ Following commands have been tested with JDK 10.0.1:
 . Test custom JRE:
 
 	hello-jre/bin/java \
+		-m hello.hello_world \
 		hello.HelloWorld
