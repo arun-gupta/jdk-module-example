@@ -1,5 +1,7 @@
 = JDK Module Example
 
+This repo explains how to create a custom JRE using JDK module system.
+
 Following commands have been tested with JDK 10.0.1:
 
 . Environment: export JAVA_HOME=~/jdk-10.0.1; export PATH=$JAVA_HOME/bin:$PATH
