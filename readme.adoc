@@ -1,0 +1,45 @@
+= JDK Module Example
+
+Following commands have been tested with JDK 10.0.1:
+
+. Environment: export JAVA_HOME=~/jdk-10.0.1; export PATH=$JAVA_HOME/bin:$PATH
+
+. Compile classes:
+
+	javac \
+		-d target/classes \
+		src/module-info.java \
+		src/hello/HelloWorld.java
+
+. Package jar:
+
+	jar \
+		--create \
+		--file target/hello.jar \
+		--main-class hello.HelloWorld \
+		-C target/classes \
+		.
+
+. Test module:
+
+	java \
+		--module-path target/hello.jar \
+		--module hello.hello_world
+
+. Describe module:
+
+	java \
+		--module-path target/hello.jar \
+		--describe-module hello.hello_world
+
+. Custom JRE:
+
+	jlink \
+		--output hello-jre \
+		--module-path target/hello.jar \
+		--add-modules java.base,hello.hello_world
+
+. Test custom JRE:
+
+	hello-jre/bin/java \
+		hello.HelloWorld
