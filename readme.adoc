@@ -42,7 +42,16 @@ Following commands have been tested with JDK 10.0.1:
 		--add-modules java.base,hello.hello_world
 
 . Test custom JRE:
-
++
 	hello-jre/bin/java \
 		-m hello.hello_world \
 		hello.HelloWorld
++
+Alternatively, run the class directly using the JAR file:
++
+	hello-jre/bin/java \
+		-cp target/hello.jar \
+		--add-modules java.base \
+		hello.HelloWorld
+
+
